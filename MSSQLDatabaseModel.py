@@ -3,7 +3,7 @@ from django.db import models
 from django.conf import settings
 
 # This exports model base with overridden Meta class that allows to specify schema and table for MSSQL support 
-# Ugly string injection hack so that we can access the table under the schema
+# Uses string injection hack as a work-around to enable access to tables under different schemas
 # See: http://nightlyclosures.com/2019/10/16/working-with-unmanaged-sql-server-in-django-pt-ii/
 SQL_DB_FORMAT = '{schema}].[{table}'
 
